@@ -4,8 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Linq;
 using System.Diagnostics;
-using test.FermatTest;
-using test.RemCalculatorLib;
+using test.RSACalculatorLib;
 using test.RSALib;
 
 namespace test;
@@ -13,23 +12,35 @@ class Program
 {
     public static void Main(string[] arg)
     {
-        int p1 = 0;
-        int temp = 0;
-        Random random = new Random();
-        bool isPrime1 = false;
-        bool isPrime2 = false;
+        //Demo RSA encrypt
+        RSA client = new RSA();
+        RSA server = new RSA();
 
-        while (!isPrime1)
+        //The data that client want to send to server
+        string origin = "Hello Im Long Nguyen";
+        Console.WriteLine($"The origin data:\n{origin}\n");
+
+        //Client get public key from server. 
+        //The public key is the tuple (N, PublicKey)
+        client.dPublicKey = server.PublicKey;
+        client.dN = server.N;
+
+        //Client encrpyt the data
+        var encrypstring = client.Encrypt(origin);
+
+        //The data after encrypt
+        Console.WriteLine("The data after encrypt and send to server:");
+        foreach (var item in encrypstring)
         {
-            p1 = random.Next(10000, 99999);
-            if (p1 % 2 == 0) p1++;
-            isPrime1 = FermatTester.FermatPrimalityTest(p1);
-            isPrime2 = FermatTester.FermatPrimalityTest(p1);
+            Console.Write($"{item}, ");
         }
+        Console.WriteLine();
 
-        Console.WriteLine($"Number: {p1}, isPrime1: {isPrime1}, isPrime2: {isPrime2}");
+        //Server decrypt the data
+        string decrypstring = server.Decrypt(encrypstring);
 
-
+        //The origin data that client want to send
+        Console.WriteLine($"\nThe data that server receiver after decrypt:\n{decrypstring}");
     }
 }
 

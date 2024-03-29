@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using test.FermatTest;
+using test.RSACalculatorLib;
 
 namespace test.RSALib
 {
     public class RSA
     {
-        private int p1, p2;
-        private int privateKey;
-        public int N {  get; set; }
-        public int publicKey { get; set; }
+        private long p1, p2;
+        private long privateKey;
+        private long ring;
+        public long N { get; private set; }
+        public long PublicKey { get; private set; }
+        public long dN { get; set; }
+        public long dPublicKey { get; set; }
 
         public RSA() 
         {
-            p1 = 0;
-            p2 = 0;
-
+            Initial();
         }
 
         public async void Initial()
@@ -26,24 +28,68 @@ namespace test.RSALib
             p1 = await GeneratePrimes();
             p2 = await GeneratePrimes();
             N = p1 * p2;
+            ring = (p1 - 1) * (p2 - 1);
+            GenerateKey();
         }
 
         public static async Task<int> GeneratePrimes()
         {
-            int p1 = 0;
+            int prime = 0;
             int temp = 0;
             Random random = new Random();
-            bool isPrime1 = false;
+            bool isPrime = false;
 
-            while (!isPrime1)
+            while (!isPrime)
             {
-                p1 = random.Next(10000, 15000);
-                if (p1 % 2 == 0) p1++;
-                isPrime1 = FermatTester.FermatPrimalityTest(p1);
+                prime = random.Next(10000, 50000);
+                if (prime % 2 == 0) prime++;
+                isPrime = RSACalculator.FermatPrimalityTest(prime);
             }
 
-            return p1;
+            return prime;
         }
-        
+
+        public void GenerateKey()
+        {
+            Random random = new Random();
+            while (true)
+            {
+                PublicKey = random.NextInt64(1000, ring);
+                if (RSACalculator.GCD(PublicKey, ring) == 1)
+                {
+                    break;
+                }
+            }
+
+            privateKey = RSACalculator.Inverse(PublicKey, ring);
+        }
+
+        public IEnumerable<long> Encrypt(string arg)
+        {
+            List<long> result = new List<long>();
+            long temp;
+
+            foreach (int item in arg)
+            {
+                temp = RSACalculator.RemWithPower(item, dPublicKey, dN);
+                result.Add(temp);
+            }
+
+            return result;
+        }
+
+        public string Decrypt(IEnumerable<long> arg)
+        {
+            string result = "";
+            char temp;
+
+            foreach (long item in arg)
+            {
+                temp = (char)RSACalculator.RemWithPower(item, privateKey, N);
+                result += temp;
+            }
+
+            return result;
+        }
     }
 }

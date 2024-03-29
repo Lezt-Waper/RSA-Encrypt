@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\test\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|d:\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|d:\\test\\rsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|solutionrelative:rsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|d:\\test\\remcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|solutionrelative:remcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|d:\\test\\fermattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|solutionrelative:fermattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|d:\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81609860-8698-47A2-8850-A1DF046FEF0E}|test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,52 +26,42 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\test\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\test\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAgwBsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T12:52:56.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RSA.cs",
               "DocumentMoniker": "D:\\test\\RSA.cs",
               "RelativeDocumentMoniker": "RSA.cs",
               "ToolTip": "D:\\test\\RSA.cs",
               "RelativeToolTip": "RSA.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAgwCIAAAApAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAADwv14AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-24T13:12:40.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FermatTest.cs",
-              "DocumentMoniker": "D:\\test\\FermatTest.cs",
-              "RelativeDocumentMoniker": "FermatTest.cs",
-              "ToolTip": "D:\\test\\FermatTest.cs",
-              "RelativeToolTip": "FermatTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\test\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\test\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AQIAABIAAAAAAAAAAAAkwCoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T13:11:57.668Z"
+              "WhenOpened": "2024-01-22T12:52:56.561Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RemCalculator.cs",
               "DocumentMoniker": "D:\\test\\RemCalculator.cs",
               "RelativeDocumentMoniker": "RemCalculator.cs",
               "ToolTip": "D:\\test\\RemCalculator.cs",
               "RelativeToolTip": "RemCalculator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA3AAAA",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAAADUAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-15T12:29:12.969Z"
+              "WhenOpened": "2024-01-15T12:29:12.969Z",
+              "EditorCaption": ""
             }
           ]
         }

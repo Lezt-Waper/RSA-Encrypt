@@ -1,30 +1,66 @@
 using System.Data.Common;
 
-namespace test.RemCalculatorLib;
+namespace test.RSACalculatorLib;
 
-class RemCalculator
+class RSACalculator
 {
-    static public int RemWithPower(int arg, int power, int divisor)
+    //Function for testing prime number
+    static public bool FermatPrimalityTest(int arg)
+    {
+        Random random = new Random();
+        List<int> numbersForTest = new List<int>();
+        int temp;
+        long power;
+
+        //Make list numbers to test
+        while (numbersForTest.Count() < (100))
+        {
+            temp = random.Next(2, arg - 1);
+            if (!numbersForTest.Contains(temp))
+                numbersForTest.Add(temp);
+        }
+
+        //Test argument is prime or not
+        foreach (int a in numbersForTest)
+        {
+            power = RSACalculator.RemWithPower(a, arg - 1, arg);
+            if (power != 1)
+                return false;
+        }
+
+        return true;
+    }
+
+    //Caculate the modulo of arg in ring divisor with the power
+    static public long RemWithPower(long arg, long power, long divisor)
     {
         long result = 1;
+
+        //Temp is modulo of arg^(2^n) in ring divisor, base case is n = 0
         long temp = arg % divisor;
 
         while (power != 0)
         {
+            //Check if power have 2^n
             if ((power % 2) == 1)
             {
-                result = (result * temp) % divisor;
+                //Add the temp to the result
+                result = ((result % divisor) * (temp % divisor)) % divisor;
             }
 
-            temp = (temp % divisor) * (temp % divisor);
+            //Compute the modulo of arg^(2^(n+1)) in ring divisor
+            temp = ((temp % divisor) * (temp % divisor)) % divisor;
+
+            //Go to next step n+1
             power /= 2;
         }
-        return (int) result;
+        return result;
     }
 
-    static public int GCD(int arg1, int arg2)
+    //Find GCD of two number
+    static public long GCD(long arg1, long arg2)
     {
-        int temp;
+        long temp;
 
         if (arg1 < arg2)
         {
@@ -43,40 +79,72 @@ class RemCalculator
         return arg1;
     }
 
-    static public Comb Pulverizer(int arg1, int arg2)
+    //Find the inverse number of arg1 in ring arg2
+    static public long Inverse(long arg1, long arg2)
     {
-        List<Comb> combs = new List<Comb>();
-        combs.Add(new Comb(1, 0));
-        combs.Add(new Comb(0, 1));
+        long old_r = arg2, r = arg1;
+        long old_t = 0, t = 1;
+        long quotient = 0;
+        long temp;
 
-        int temp, quote, step = 2;
-
-        //if (arg1 < arg2)
-        //{
-        //    temp = arg1;
-        //    arg1 = arg2;
-        //    arg2 = temp;
-        //}
-
-        while (true)
+        while (r != 0)
         {
-            quote = arg1 / arg2;
-            arg1 = arg1 % arg2;
+            quotient = old_r / r;
 
-            if (arg1 == 0 || arg2 == 0)
-                break;
+            //Compute new r
+            temp = old_r;
+            old_r = r;
+            r = temp - quotient * r;
 
-            combs.Add(new Comb(combs[step - 2].a - quote * combs[step - 1].a, combs[step - 2].b - quote * combs[step - 1].b));
-
-            temp = arg1;
-            arg1 = arg2;
-            arg2 = temp;
-
-            step++;
+            //Compute new t
+            temp = old_t;
+            old_t = t;
+            t = temp - quotient * t;
         }
 
-        return combs[step - 1];
+        if (old_r > 1)
+        {
+            return -1;
+        }
+        if (old_t < 0)
+        {
+            old_t = old_t + arg2;
+        }
+
+        return old_t;
     }
 
-    public record Comb(int a, int b);
+    //Find the Bézout coefficients of arg1 and arg2
+    static public Comb Puverizer(long arg1, long arg2)
+    {
+        long old_r = arg1, r = arg2;
+        long old_s = 1, s = 0;
+        long old_t = 0, t = 1;
+        long quotient = 0;
+        long temp;
+
+        while (r != 0)
+        {
+            quotient = old_r / r;
+
+            //Comput new r
+            temp = old_r;
+            old_r = r;
+            r = temp - quotient * r;
+
+            //Compute new s
+            temp = old_s;
+            old_s = s;
+            s = temp - quotient * s;
+
+            //Compute new t
+            temp = old_t;
+            old_t = t;
+            t = temp - quotient * t;
+        }
+
+        return new Comb(old_s, old_t);
+    }
+
+    public record Comb(long a, long b);
 }
