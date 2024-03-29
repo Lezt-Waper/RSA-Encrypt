@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\test\\test.csproj",
-      "projectName": "test",
-      "projectPath": "D:\\test\\test.csproj",
+      "projectUniqueName": "D:\\test\\RSA_Encrypt.csproj",
+      "projectName": "RSA_Encrypt",
+      "projectPath": "D:\\test\\RSA_Encrypt.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "D:\\test\\obj\\",
       "projectStyle": "PackageReference",
