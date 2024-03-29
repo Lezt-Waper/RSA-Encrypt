@@ -1,0 +1,15 @@
+D:\test\bin\Debug\net6.0\RSA_Encrypt.exe
+D:\test\bin\Debug\net6.0\RSA_Encrypt.deps.json
+D:\test\bin\Debug\net6.0\RSA_Encrypt.runtimeconfig.json
+D:\test\bin\Debug\net6.0\RSA_Encrypt.dll
+D:\test\bin\Debug\net6.0\RSA_Encrypt.pdb
+D:\test\obj\Debug\net6.0\RSA_Encrypt.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\obj\Debug\net6.0\RSA_Encrypt.AssemblyInfoInputs.cache
+D:\test\obj\Debug\net6.0\RSA_Encrypt.AssemblyInfo.cs
+D:\test\obj\Debug\net6.0\RSA_Encrypt.csproj.CoreCompileInputs.cache
+D:\test\obj\Debug\net6.0\RSA_Encrypt.sourcelink.json
+D:\test\obj\Debug\net6.0\RSA_Encrypt.dll
+D:\test\obj\Debug\net6.0\refint\RSA_Encrypt.dll
+D:\test\obj\Debug\net6.0\RSA_Encrypt.pdb
+D:\test\obj\Debug\net6.0\RSA_Encrypt.genruntimeconfig.cache
+D:\test\obj\Debug\net6.0\ref\RSA_Encrypt.dll
