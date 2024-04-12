@@ -17,13 +17,13 @@ class Program
         RSA server = new RSA();
 
         //The data that client want to send to server
-        string origin = "Hello Im Long Nguyen";
+        string origin = "Hello I'm Long Nguyen";
         Console.WriteLine($"The origin data:\n{origin}\n");
 
         //Client get public key from server. 
         //The public key is the tuple (N, PublicKey)
-        client.dPublicKey = server.PublicKey;
-        client.dN = server.N;
+        client.DestPublicKey = server.PublicKey;
+        client.DestN = server.N;
 
         //Client encrpyt the data
         var encrypstring = client.Encrypt(origin);

@@ -15,8 +15,8 @@ namespace test.RSALib
         private long ring;
         public long N { get; private set; }
         public long PublicKey { get; private set; }
-        public long dN { get; set; }
-        public long dPublicKey { get; set; }
+        public long DestN { get; set; }
+        public long DestPublicKey { get; set; }
 
         public RSA() 
         {
@@ -71,7 +71,7 @@ namespace test.RSALib
 
             foreach (int item in arg)
             {
-                temp = RSACalculator.RemWithPower(item, dPublicKey, dN);
+                temp = RSACalculator.RemWithPower(item, DestPublicKey, DestN);
                 result.Add(temp);
             }
 
