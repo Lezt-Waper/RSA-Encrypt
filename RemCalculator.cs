@@ -1,6 +1,6 @@
 using System.Data.Common;
 
-namespace test.RSACalculatorLib;
+namespace RSA_Encrypt.RSACalculatorLib;
 
 class RSACalculator
 {

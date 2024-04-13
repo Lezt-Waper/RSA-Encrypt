@@ -4,10 +4,10 @@ using System.Text;
 using System.Threading;
 using System.Linq;
 using System.Diagnostics;
-using test.RSACalculatorLib;
-using test.RSALib;
+using RSA_Encrypt.RSACalculatorLib;
+using RSA_Encrypt.RSALib;
 
-namespace test;
+namespace RSA_Encrypt;
 class Program
 {
     public static void Main(string[] arg)

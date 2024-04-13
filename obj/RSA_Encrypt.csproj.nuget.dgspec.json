@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\test\\RSA_Encrypt.csproj": {}
+    "D:\\RSA_Encrypt\\RSA_Encrypt.csproj": {}
   },
   "projects": {
-    "D:\\test\\RSA_Encrypt.csproj": {
+    "D:\\RSA_Encrypt\\RSA_Encrypt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\test\\RSA_Encrypt.csproj",
+        "projectUniqueName": "D:\\RSA_Encrypt\\RSA_Encrypt.csproj",
         "projectName": "RSA_Encrypt",
-        "projectPath": "D:\\test\\RSA_Encrypt.csproj",
+        "projectPath": "D:\\RSA_Encrypt\\RSA_Encrypt.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\test\\obj\\",
+        "outputPath": "D:\\RSA_Encrypt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
